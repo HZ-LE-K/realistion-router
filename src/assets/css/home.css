@@ -1,0 +1,48 @@
+.hero-academy {
+  min-height: 82vh;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(90deg, rgba(2, 11, 24, 0.92), rgba(2, 11, 24, 0.65)),
+    url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1600&q=80') center/cover;
+  border-bottom: 1px solid rgba(0, 245, 255, 0.16);
+}
+
+.hero-academy .display-4 {
+  color: #fff;
+  text-shadow: 0 0 18px rgba(0, 245, 255, 0.24);
+}
+
+.stat-box {
+  min-height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.4rem;
+  text-align: center;
+}
+
+.stat-box strong {
+  color: var(--neon-cyan);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+}
+
+.stat-box span {
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 991px) {
+  .hero-academy {
+    min-height: 70vh;
+  }
+}
+
+@media (max-width: 575px) {
+  .hero-academy {
+    min-height: 64vh;
+  }
+}

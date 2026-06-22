@@ -1,0 +1,21 @@
+.contact-panel {
+  padding: 1.25rem;
+}
+
+.contact-list p {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.8rem;
+}
+
+.contact-list i {
+  color: var(--neon-cyan);
+}
+
+.alert-success {
+  background: rgba(0, 255, 136, 0.12);
+  border-color: rgba(0, 255, 136, 0.35);
+  color: #d9ffe9;
+}

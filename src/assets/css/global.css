@@ -1,0 +1,187 @@
+:root {
+  --neon-cyan: #00f5ff;
+  --neon-purple: #bf00ff;
+  --neon-green: #00ff88;
+  --neon-pink: #ff006e;
+  --bg-dark: #020b18;
+  --bg-card: rgba(5, 20, 40, 0.7);
+  --bg-glass: rgba(0, 245, 255, 0.05);
+  --border-glow: rgba(0, 245, 255, 0.3);
+  --text-primary: #e0f7ff;
+  --text-muted: rgba(160, 210, 230, 0.7);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% -20%, rgba(0,245,255,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(191,0,255,0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+#app { position: relative; z-index: 1; }
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-shell main {
+  flex: 1;
+}
+
+h1, h2, h3, h4, h5, h6 { font-family: 'Orbitron', sans-serif; }
+
+a { color: var(--neon-cyan); text-decoration: none; }
+a:hover { color: #fff; }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #020b18; }
+::-webkit-scrollbar-thumb { background: var(--neon-cyan); border-radius: 3px; }
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glow);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.btn-neon {
+  background: transparent;
+  border: 1px solid var(--neon-cyan);
+  color: var(--neon-cyan);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1.25rem;
+  border-radius: 4px;
+  display: inline-block;
+}
+.btn-neon:hover {
+  background: var(--neon-cyan);
+  color: #020b18;
+  box-shadow: 0 0 20px var(--neon-cyan), 0 0 40px rgba(0,245,255,0.3);
+  text-decoration: none;
+}
+
+.btn-neon-solid {
+  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+  border: none;
+  color: #020b18;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1.25rem;
+  border-radius: 4px;
+  display: inline-block;
+}
+.btn-neon-solid:hover {
+  box-shadow: 0 0 20px var(--neon-cyan), 0 0 40px rgba(0,245,255,0.3);
+  transform: translateY(-2px);
+  color: #020b18;
+  text-decoration: none;
+}
+
+.section-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.divider-neon {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--neon-cyan), var(--neon-purple), transparent);
+  border: none;
+  margin: 2rem 0;
+  opacity: 0.6;
+}
+
+.min-vh-75 {
+  min-height: 75vh;
+}
+
+.text-muted-custom {
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.stat-box,
+.filters-bar,
+.detail-content,
+.contact-panel,
+.empty-state,
+.info-box {
+  background: rgba(5, 20, 40, 0.72);
+  border: 1px solid rgba(0, 245, 255, 0.18);
+  border-radius: 8px;
+  backdrop-filter: blur(12px);
+}
+
+.empty-state {
+  padding: clamp(2rem, 5vw, 4rem);
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.empty-state i {
+  display: block;
+  color: var(--neon-cyan);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.form-control,
+.form-select,
+.input-group-text {
+  background-color: rgba(2, 11, 24, 0.9);
+  border-color: rgba(0, 245, 255, 0.22);
+  color: var(--text-primary);
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: rgba(2, 11, 24, 0.96);
+  border-color: var(--neon-cyan);
+  color: var(--text-primary);
+  box-shadow: 0 0 0 0.2rem rgba(0, 245, 255, 0.12);
+}
+
+.form-control::placeholder {
+  color: rgba(160, 210, 230, 0.5);
+}
