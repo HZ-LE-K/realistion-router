@@ -4,7 +4,7 @@
       <img :src="formation.image" :alt="formation.titre" class="f-card__img" />
       <div class="f-card__overlay"></div>
       <span class="f-card__niveau" :class="niveauClass">{{ formation.niveau }}</span>
-      <button class="f-card__heart" :class="{ active: estFavori }" @click.stop="toggleFavori" :title="estFavori ? 'Retirer' : 'Ajouter aux favoris'">
+      <button class="f-card__heart" :class="{ active: estFavori }" @click.stop="toggleFavori($event)" :title="estFavori ? 'Retirer' : 'Ajouter aux favoris'">
         <i class="bi" :class="estFavori ? 'bi-heart-fill' : 'bi-heart'"></i>
       </button>
     </div>
@@ -46,7 +46,34 @@ const props = defineProps({ formation: { type: Object, required: true } })
 
 const store = useFavorisStore()
 const estFavori = computed(() => store.estFavori(props.formation.id))
-function toggleFavori() {
+function toggleFavori(event) {
+  if (estFavori.value) {
+    const rect = event.currentTarget.getBoundingClientRect()
+    const cx = rect.left + rect.width / 2
+    const cy = rect.top + rect.height / 2
+    const colors = ['#00f5ff', '#bf00ff', '#ff006e', '#00ff88', '#ffffff']
+    for (let i = 0; i < 40; i++) {
+      const el = document.createElement('div')
+      el.className = 'pixel-burst'
+      const angle = (i / 40) * 360 + Math.random() * 15
+      const dist = 50 + Math.random() * 100
+      const dx = Math.cos((angle * Math.PI) / 180) * dist
+      const dy = Math.sin((angle * Math.PI) / 180) * dist
+      const size = 4 + Math.random() * 6
+      const color = colors[Math.floor(Math.random() * colors.length)]
+      el.style.cssText = `
+        left:${cx}px; top:${cy}px;
+        width:${size}px; height:${size}px;
+        background:${color};
+        box-shadow:0 0 ${size}px ${color};
+        --dx:${dx}px; --dy:${dy}px;
+        --rot:${(Math.random() - 0.5) * 720}deg;
+        --duration:${0.45 + Math.random() * 0.4}s;
+      `
+      document.body.appendChild(el)
+      el.addEventListener('animationend', () => el.remove())
+    }
+  }
   store.toggleFavori(props.formation)
 }
 

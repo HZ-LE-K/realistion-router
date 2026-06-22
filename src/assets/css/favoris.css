@@ -1,1 +1,18 @@
+@keyframes pixel-fly {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--dx), var(--dy)) scale(0) rotate(var(--rot));
+    opacity: 0;
+  }
+}
 
+.pixel-burst {
+  position: fixed;
+  border-radius: 1px;
+  pointer-events: none;
+  animation: pixel-fly var(--duration) ease-out forwards;
+  z-index: 9999;
+}

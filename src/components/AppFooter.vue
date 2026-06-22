@@ -27,8 +27,8 @@
           <h6 class="footer-heading">Contact</h6>
           <ul class="footer-contact">
             <li><i class="bi bi-geo-alt"></i> 12 Rue de l'Innovation, Paris</li>
-            <li><i class="bi bi-telephone"></i> +33 1 23 45 67 89</li>
-            <li><i class="bi bi-envelope"></i> contact@dwwm-academy.fr</li>
+            <li><i class="bi bi-telephone"></i> +33 7 45 55 69 34</li>
+            <li><i class="bi bi-envelope"></i> yntant09@gmail.com </li>
           </ul>
         </div>
       </div>
@@ -40,7 +40,7 @@
             Copyright {{ year }} DWWM Academy - Tous droits reserves
           </p>
           <p class="mb-0 footer-copy">
-            Concu avec soin pour le numerique
+            Concu avec soin avec HZ-LE-K 
           </p>
         </div>
       </div>
